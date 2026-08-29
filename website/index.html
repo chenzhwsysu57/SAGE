@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SAGE: reliable strategic reasoning for LLM agents in repeated imperfect-information games.">
+  <meta property="og:title" content="SAGE — Reliable strategic reasoning for LLM game agents">
+  <meta property="og:description" content="From unsupported guesses to structured play: equilibrium guidance, opponent beliefs, and counterfactual experience.">
+  <title>SAGE — Reliable strategic reasoning for LLM game agents</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar shell">
+    <a class="brand" href="#top"><span>SAGE</span><small>strategic reasoning for game-playing agents</small></a>
+    <nav aria-label="Primary navigation"><a href="#idea">The idea</a><a href="#results">Results</a><a href="#try">Try it</a><a class="nav-button" href="../README.md">GitHub ↗</a></nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="kicker">SAGE</p>
+        <h1>strategic reasoning framework for LLM-based game-playing agents</h1>
+        <p class="abstract"><strong>We identify three recurring problems</strong> in free-form LLM reasoning for repeated imperfect-information games: <strong>unsupported assumptions</strong> about hidden states, <strong>unstable opponent beliefs</strong> that change across similar situations, and <strong>ineffective historical calibration</strong> that treats more history as automatically useful.</p>
+        <p class="abstract solution"><strong>Our solution is SAGE</strong>: an inference-time framework that gives the LLM three structured reasoning references—an equilibrium policy, an online belief over opponent behavior, and counterfactual hypotheses extracted from similar interactions. These references do not directly modify the policy; the LLM interprets them with the current state and chooses the final action.</p>
+        <div class="actions"><a class="button primary" href="#idea">See the idea <span>↓</span></a><a class="button quiet" href="#try">Play against SAGE</a></div>
+        <p class="note">A parameter-training-free framework for Leduc Hold’em, Liar’s Dice, and Goofspiel.</p>
+      </div>
+    </section>
+
+    <section class="problem band" id="problem">
+      <div class="shell">
+        <div class="section-lead"><p class="kicker">THE PROBLEM</p><h2>Free-form reasoning breaks in subtle ways.</h2><p>In imperfect-information games, a plausible explanation is not enough. The agent must keep its assumptions, beliefs, and past lessons consistent with the actual game.</p></div>
+        <div class="failure-grid">
+          <article><div class="number">01</div><img src="assets/paper/opening/unsupported_rollout.png" alt="Example of unsupported assumptions in an LLM rollout"><h3>Unsupported assumptions</h3><p>The rollout invents evidence that the game never provided. Free style reasoning generates rollout that's against the game environment or previous assumptions, in each rollout depth.</p></article>
+          <article><div class="number">02</div><img src="assets/paper/opening/opponent_belief.png" alt="Inconsistent opponent belief examples"><h3>Unstable opponent beliefs</h3><p>The same behavioral evidence can produce different guesses in different scenes, ranging from 20% of estimated raise prob, up to 90%+.</p></article>
+          <article><div class="number">03</div><img src="assets/paper/opening/history_stability.png" alt="Policy instability under irrelevant history"><h3>Irrelevant history makes decision unstable</h3><p>Given history messes around the original reasoning process and makes action unstable. Left panel data is more stable when no history is provided.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="idea">
+      <div class="section-lead narrow"><p class="kicker">THE IDEA</p><h2>Give every decision three useful references.</h2><p>SAGE keeps the LLM in the loop. Its modules do not directly rewrite the policy; they provide structured reasoning references that the LLM can weigh against the current game state.</p></div>
+      <figure class="wide-figure"><img src="assets/paper/framework.png" alt="SAGE provides equilibrium policy, opponent estimate, and counterfactual hypothesis as reasoning references"><figcaption>The three modules supply references for reasoning. The LLM remains responsible for interpreting them and choosing the final action.</figcaption></figure>
+      <div class="pillars"><article><span class="pill orange">01 · POLICY REFERENCE</span><h3>Start from strategy</h3><p>An equilibrium policy offers a disciplined strategic anchor—not a forced action.</p></article><article><span class="pill blue">02 · BELIEF REFERENCE</span><h3>Track the opponent</h3><p>Recent actions update a soft distribution over styles and expose how the opponent may deviate.</p></article><article><span class="pill purple">03 · EXPERIENCE REFERENCE</span><h3>Recalibrate with hypotheses</h3><p>Similar interactions become counterfactual guidance: another consideration the LLM can use.</p></article></div>
+    </section>
+
+    <section class="contrast section shell">
+      <div class="contrast-copy"><p class="kicker">WHY THIS COMBINATION?</p><h2>Agents make their own choice. You just give them information.</h2><p>SAGE does not ask the model to generate an ever-longer tree of possibilities. It doesn't use a policy model, oppoennt policy model or RAG style history/memory module. It supplies compact signals into reference that the LLM can read  interpret before choosing their own next action.</p></div>
+      <div class="contrast-figures"><figure><img src="assets/paper/search_vs_eq.png" alt="Comparison between search-based lookahead and SAGE"><figcaption>Strategic guidance without an expanding search tree.</figcaption></figure><figure><img src="assets/paper/history_vs_hypothesis.png" alt="Comparison between history, lessons, and counterfactual hypotheses"><figcaption>Past interactions become hypotheses, not copied actions.</figcaption></figure><figure><img src="assets/paper/style_shift.png" alt="SAGE belief rapidly adapts after an opponent style shift"><figcaption>Belief updates quickly when the opponent changes style.</figcaption></figure></div>
+    </section>
+
+    <section class="section shell" id="results">
+      <div class="results-intro"><div class="section-lead"><p class="kicker">EFFECIENCY</p><h2>More payoff, less wandering.</h2><p>SAGE is extremely token-efficient. It saves a lot of token input and output, but maintains a relatively high performance.</p></div></div>
+      <div class="results-figures"><figure class="result-main"><img src="assets/paper/leduc_method_frontier.png" alt="Leduc payoff versus token consumption across methods"><figcaption>Payoff versus inference cost in Leduc Hold’em. Higher and further left is better. Compared with existing LLM gaming agents, the SAGE earsn a relatively high payoff within bearble token consumption.</figcaption></figure><figure class="token-figure"><img src="assets/paper/token_usage.png" alt="Token usage comparison across Leduc methods"><figcaption>Token usage across Leduc decision-making methods. Compared with search-based method likc Monte Carlo(mcts) or other agents like Suspicion-Agent, SAGE use less token input and output.</figcaption></figure></div>
+      <div class="performance-table-wrap"><div class="table-heading"><h3>Overall performance</h3><p>Win rate and mean net payoff across five seeds, both player positions, and six opponent styles per game.</p></div><div class="table-scroll"><table class="performance-table"><thead><tr><th rowspan="2">Game</th><th rowspan="2">Opponent</th><th colspan="2">Vanilla</th><th colspan="2">LLM (Eq)</th><th colspan="2">LLM (Opp)</th><th colspan="2">Suspicion</th><th colspan="2">MCCFR</th><th colspan="2" class="sage-col">SAGE</th></tr><tr><th>WR</th><th>Payoff</th><th>WR</th><th>Payoff</th><th>WR</th><th>Payoff</th><th>WR</th><th>Payoff</th><th>WR</th><th>Payoff</th><th class="sage-col">WR</th><th class="sage-col">Payoff</th></tr></thead><tbody>
+        <tr><th rowspan="7">Leduc</th><td>LAG</td><td>31.7%</td><td>+68</td><td>35.0%</td><td>+70</td><td>35.0%</td><td>+84</td><td>33.3%</td><td>+58</td><td>28.3%</td><td>+26</td><td class="sage-col">43.3%</td><td class="sage-col">+102</td></tr>
+        <tr><td>TAG</td><td>53.3%</td><td>+49</td><td>46.7%</td><td>+34</td><td>48.4%</td><td>+32</td><td>56.7%</td><td>+6</td><td>43.3%</td><td>+24</td><td class="sage-col">56.7%</td><td class="sage-col">+35</td></tr>
+        <tr><td>CallStat.</td><td>43.3%</td><td>+51</td><td>38.3%</td><td>+68</td><td>38.3%</td><td>+64</td><td>43.3%</td><td>+59</td><td>38.3%</td><td>+66</td><td class="sage-col">45.0%</td><td class="sage-col">+74</td></tr>
+        <tr><td>Nit</td><td>65.0%</td><td>+26</td><td>68.4%</td><td>+36</td><td>71.7%</td><td>+40</td><td>86.7%</td><td>+53</td><td>86.7%</td><td>+47</td><td class="sage-col">90.0%</td><td class="sage-col">+48</td></tr>
+        <tr><td>Maniac</td><td>36.7%</td><td>+88</td><td>40.0%</td><td>+120</td><td>43.3%</td><td>+116</td><td>38.3%</td><td>+79</td><td>51.7%</td><td>+151</td><td class="sage-col">41.7%</td><td class="sage-col">+141</td></tr>
+        <tr><td>GTO</td><td>45.0%</td><td>-2</td><td>40.0%</td><td>+15</td><td>45.0%</td><td>-2</td><td>50.0%</td><td>+3</td><td>56.7%</td><td>+15</td><td class="sage-col">53.3%</td><td class="sage-col">+10</td></tr>
+        <tr class="total"><td>Total</td><td>45.8%</td><td>+280</td><td>44.7%</td><td>+343</td><td>47.0%</td><td>+334</td><td>51.4%</td><td>+258</td><td>50.8%</td><td>+329</td><td class="sage-col">55.0%</td><td class="sage-col">+410</td></tr>
+        <tr><th rowspan="7">Liar’s Dice</th><td>Bluffer</td><td>55.0%</td><td>+6</td><td>66.7%</td><td>+20</td><td>50.0%</td><td>+0</td><td>—</td><td>—</td><td>76.7%</td><td>+32</td><td class="sage-col">71.7%</td><td class="sage-col">+26</td></tr>
+        <tr><td>Honest</td><td>70.0%</td><td>+24</td><td>80.0%</td><td>+36</td><td>70.0%</td><td>+24</td><td>—</td><td>—</td><td>65.0%</td><td>+18</td><td class="sage-col">90.0%</td><td class="sage-col">+48</td></tr>
+        <tr><td>Aggressive</td><td>65.0%</td><td>+18</td><td>76.7%</td><td>+32</td><td>61.7%</td><td>+14</td><td>—</td><td>—</td><td>65.0%</td><td>+18</td><td class="sage-col">76.7%</td><td class="sage-col">+32</td></tr>
+        <tr><td>Conservative</td><td>53.3%</td><td>+4</td><td>70.0%</td><td>+24</td><td>48.4%</td><td>-2</td><td>—</td><td>—</td><td>66.7%</td><td>+20</td><td class="sage-col">81.7%</td><td class="sage-col">+38</td></tr>
+        <tr><td>Random</td><td>88.3%</td><td>+46</td><td>83.4%</td><td>+40</td><td>81.7%</td><td>+38</td><td>—</td><td>—</td><td>83.3%</td><td>+40</td><td class="sage-col">83.3%</td><td class="sage-col">+40</td></tr>
+        <tr><td>GTO</td><td>33.3%</td><td>-20</td><td>41.7%</td><td>-10</td><td>48.3%</td><td>-2</td><td>—</td><td>—</td><td>53.3%</td><td>+4</td><td class="sage-col">45.0%</td><td class="sage-col">-6</td></tr>
+        <tr class="total"><td>Total</td><td>60.8%</td><td>+78</td><td>69.8%</td><td>+142</td><td>60.0%</td><td>+72</td><td>—</td><td>—</td><td>68.3%</td><td>+132</td><td class="sage-col">74.7%</td><td class="sage-col">+178</td></tr>
+        <tr><th rowspan="7">Goofspiel</th><td>Greedy</td><td>56.7%</td><td>+66</td><td>41.7%</td><td>-3</td><td>56.7%</td><td>+40</td><td>—</td><td>—</td><td>46.7%</td><td>+41</td><td class="sage-col">61.7%</td><td class="sage-col">+92</td></tr>
+        <tr><td>Conservative</td><td>91.7%</td><td>+279</td><td>76.7%</td><td>+190</td><td>86.7%</td><td>+296</td><td>—</td><td>—</td><td>65.0%</td><td>+94</td><td class="sage-col">90.0%</td><td class="sage-col">+326</td></tr>
+        <tr><td>Sacrificial</td><td>56.7%</td><td>+117</td><td>66.7%</td><td>+134</td><td>70.0%</td><td>+130</td><td>—</td><td>—</td><td>46.7%</td><td>+67</td><td class="sage-col">75.0%</td><td class="sage-col">+254</td></tr>
+        <tr><td>Random</td><td>73.3%</td><td>+191</td><td>70.0%</td><td>+136</td><td>76.7%</td><td>+193</td><td>—</td><td>—</td><td>83.3%</td><td>+171</td><td class="sage-col">70.0%</td><td class="sage-col">+117</td></tr>
+        <tr><td>Mirror</td><td>11.7%</td><td>-72</td><td>51.7%</td><td>+74</td><td>73.3%</td><td>+142</td><td>—</td><td>—</td><td>43.3%</td><td>+22</td><td class="sage-col">88.3%</td><td class="sage-col">+200</td></tr>
+        <tr><td>GTO</td><td>25.0%</td><td>-61</td><td>28.3%</td><td>-23</td><td>20.0%</td><td>-63</td><td>—</td><td>—</td><td>25.0%</td><td>-6</td><td class="sage-col">33.3%</td><td class="sage-col">-1</td></tr>
+        <tr class="total"><td>Total</td><td>52.5%</td><td>+520</td><td>55.8%</td><td>+508</td><td>63.9%</td><td>+738</td><td>—</td><td>—</td><td>51.7%</td><td>+389</td><td class="sage-col">69.7%</td><td class="sage-col">+988</td></tr>
+      </tbody></table></div></div>
+      <div class="gaming-dynamics"><div class="section-lead narrow"><p class="kicker">REPEATED INTERACTION</p><h2>Gaming Dynamics</h2><p>Across games, opponent styles, and player positions, SAGE’s payoff accumulates over repeated interaction rather than depending on a single lucky decision.</p></div><figure class="matrix"><img src="assets/paper/benchmark_matrix.png" alt="Benchmark payoff dynamics across games and opponent styles"><figcaption>Repeated-play benchmark overview across games, styles, and player positions.</figcaption></figure></div>
+    </section>
+
+    <section class="case-section band" id="case-study">
+      <div class="shell"><div class="section-lead"><p class="kicker">CASE STUDY</p><h2>Different signals matter in different moments.</h2><p>Click through representative decisions from the three games. The cards separate the reference, the LLM’s reasoning, and what happened next.</p></div><div class="case-cards">
+        <article class="case-card" data-case="goofspiel"><div class="case-top"><span class="case-game">GOOFSPIEL</span><span class="case-result">counterfactual hypothesis</span></div><h3>Save the high card for the right moment.</h3><div class="case-context"><strong>Game 20 · Round 2/5 · Prize 4</strong><br>Your hand: 1, 3, 4, 5 · Score: 1–1</div><div class="case-tabs" role="tablist"><button class="active" data-tab="reference">Without</button><button data-tab="with">With</button><button data-tab="result">Result</button></div><div class="case-panel active" data-panel="reference">The natural baseline bids 5 now to win the current prize, spending its best card before a more valuable prize appears.</div><div class="case-panel" data-panel="with">A similar historical interaction suggests saving the high card: if the opponent bids no higher than 4, bidding 3 may lose now but preserve a stronger response later.</div><div class="case-panel" data-panel="result"><strong>Action: bid 4.</strong><br>Opponent: bid 3 · Result: win with 5 saved.</div></article>
+        <article class="case-card" data-case="leduc"><div class="case-top"><span class="case-game">LEDUC HOLD’EM</span><span class="case-result">opponent belief</span></div><h3>Adjust a safe line to an aggressive opponent.</h3><div class="case-context"><strong>Game 17 · Step 2 · Preflop</strong><br>Hand: Q♥ · Opponent hand: unknown · Opponent bets 2<br>Pot: 4 · Next street: flop</div><div class="case-tabs" role="tablist"><button class="active" data-tab="reference">Without</button><button data-tab="with">With</button><button data-tab="result">Result</button></div><div class="case-panel active" data-panel="reference">Against an unknown card, calling is a reasonable baseline. The equilibrium reference leans toward call, with some raises.</div><div class="case-panel" data-panel="with">The belief reference estimates the opponent as Maniac-like with high probability. Against frequent bluffing and loose calls, raising becomes more valuable.</div><div class="case-panel" data-panel="result"><strong>Action: raise 4.</strong><br>Opponent: raise 4 · Result: earn 19 chips.</div></article>
+        <article class="case-card" data-case="liars-dice"><div class="case-top"><span class="case-game">LIAR’S DICE</span><span class="case-result">policy reference</span></div><h3>Use equilibrium as a disciplined anchor.</h3><div class="case-context"><strong>Game 8 · Step 4</strong><br>Your dice: 1, 3 · Opponent has 2 dice left<br>Current bid: three 1s · Opponent score: 0</div><div class="case-tabs" role="tablist"><button class="active" data-tab="reference">Without</button><button data-tab="with">With</button><button data-tab="result">Result</button></div><div class="case-panel active" data-panel="reference">Without a strategic anchor, the agent may challenge a plausible bid too early, even when the probability of being wrong is high.</div><div class="case-panel" data-panel="with">The policy reference shows the bid is likely false, but also that challenging is risky. The LLM weighs this reference with the current dice and chooses a stronger response.</div><div class="case-panel" data-panel="result"><strong>Action: challenge.</strong><br>Result: enter the next step and earn 1 point.</div></article>
+      </div><p class="case-source"><a class="text-link" href="assets/paper/case_study.png">Open the full case-study figure ↗</a></p></div>
+    </section>
+
+    <section class="try band" id="try"><div class="shell try-layout"><div><p class="kicker">TRY IT YOURSELF <span>🕹️</span></p><h2>Take a seat at the table.</h2><p>Train the small CFR policy locally, then play Leduc against the agent. No pretrained weights are bundled.</p></div><pre><code>conda create -n SAGE python=3.11 -y
+conda activate SAGE
+pip install -r requirements.txt
+
+python runs/leduc/train_cfr.py \
+  --output-dir results/leduc/cfr_model
+
+python main.py leduc \
+  --p1 Human --p1-method human \
+  --p2 CFR --p2-method cfr \
+  --seed 42</code></pre></div></section>
+
+    <section class="final shell"><p class="kicker">OPEN RESEARCH CODE</p><h2>Read the paper. Run the games. Inspect the decisions.</h2><div class="actions"><a class="button primary" href="../README.md">Explore the repository <span>→</span></a></div></section>
+  </main>
+  <script>
+    document.querySelectorAll('.case-card').forEach((card) => {
+      const buttons = card.querySelectorAll('[data-tab]');
+      const panels = card.querySelectorAll('[data-panel]');
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        buttons.forEach((item) => item.classList.toggle('active', item === button));
+        panels.forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === button.dataset.tab));
+      }));
+    });
+  </script>
+  <footer class="footer shell"><span>SAGE · Self-Evolving Reliable Strategic Reasoning Framework</span><span><a href="../README.md">README</a><a href="../tests/">Tests</a></span></footer>
+</body>
+</html>

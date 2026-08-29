@@ -1,0 +1,47 @@
+{
+  "description": "Legacy curated train/test files for six Leduc archetype classification.",
+  "entries": {
+    "LAG": {
+      "train_json": "results/leduc/pilot_tom_real_20260525_195115.json",
+      "train_batch_idx": 2,
+      "test_json": "results/leduc/pilot_tom_real_20260525_195115.json",
+      "test_batch_idx": 0,
+      "opp_id": 1
+    },
+    "TAG": {
+      "train_json": "results/leduc/pilot_tom_real_20260525_194051.json",
+      "train_batch_idx": 0,
+      "test_json": "results/leduc/pilot_tom_real_20260527_193215.json",
+      "test_batch_idx": 0,
+      "opp_id": 1
+    },
+    "CallingStation": {
+      "train_json": "results/leduc/pilot_tom_real_20260525_194156.json",
+      "train_batch_idx": 2,
+      "test_json": "results/leduc/pilot_tom_real_20260525_194156.json",
+      "test_batch_idx": 0,
+      "opp_id": 1
+    },
+    "Nit": {
+      "train_json": "results/leduc/pilot_tom_real_20260525_193750.json",
+      "train_batch_idx": 0,
+      "test_json": "results/leduc/pilot_tom_real_20260527_201823.json",
+      "test_batch_idx": 0,
+      "opp_id": 1
+    },
+    "Maniac": {
+      "train_json": "results/leduc/pilot_tom_real_20260525_194859.json",
+      "train_batch_idx": 0,
+      "test_json": "results/leduc/pilot_tom_real_20260527_203049.json",
+      "test_batch_idx": 0,
+      "opp_id": 1
+    },
+    "GTO": {
+      "train_json": "results/leduc/pilot_tom_real_20260525_194342.json",
+      "train_batch_idx": 2,
+      "test_json": "results/leduc/pilot_tom_real_20260525_194342.json",
+      "test_batch_idx": 0,
+      "opp_id": 1
+    }
+  }
+}

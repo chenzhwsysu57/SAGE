@@ -1,0 +1,20 @@
+[project]
+name = "tom-research"
+version = "0.1.0"
+description = "Multi-agent LLM game framework for Theory of Mind research"
+requires-python = ">=3.11"
+dependencies = [
+    "matplotlib>=3.7",
+    "numpy>=1.24",
+    "pydantic>=2.0",
+    "openai>=1.0",
+    "tqdm>=4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
