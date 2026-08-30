@@ -6,7 +6,7 @@
 
 # SAGE 🚀🚀🚀
 
-An LLM agent that plays imperfect-information games which captures your behavior tendencies and react over them!
+An LLM agent that plays imperfect-information games which captures opponents' behavior tendencies and react over them!
 
 
 **supported games**
