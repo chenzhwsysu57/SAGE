@@ -582,8 +582,8 @@ def main():
                         default=True,
                         help="Don't save prompts and responses to disk")
     parser.add_argument("--method", default="statistical",
-                        choices=["llm", "statistical"],
-                        help="Opponent modeling method (default: statistical)")
+                        choices=["llm", "statistical", "sage"],
+                        help="Opponent modeling method; sage selects the full ToM-CFR agent")
     parser.add_argument("--signature-manifest",
                         default="runs/leduc/manifests/classify_all6_legacy.json",
                         help="Manifest with labeled historical games for data-driven signatures")
@@ -616,6 +616,12 @@ def main():
     parser.add_argument("--verbose", "-v", action="store_true",
                         help="Print per-game details")
     args = parser.parse_args()
+    requested_method = args.method
+    if args.method == "sage":
+        if args.condition not in (None, "tom_cfr"):
+            parser.error("--method sage only supports the tom_cfr condition")
+        args.condition = "tom_cfr"
+        args.method = "statistical"
 
     ablation_config = AblationConfig.from_comma_separated(args.ablate)
 
@@ -637,6 +643,7 @@ def main():
     run_dir = make_run_dir(args.output_dir, slug)
     write_json(run_dir / "config.json", {
         "args": serializable_args(args),
+        "requested_method": requested_method,
         "git_commit": git_commit(),
         "ablation": args.ablate or "none",
         "phase": args.phase,
@@ -699,6 +706,7 @@ def main():
         "games_per_position": args.games,
         "start_seed": args.start_seed,
         "ablation": args.ablate or "none",
+        "requested_method": requested_method,
         "modeling_method": args.method,
         "stat_mode": args.stat_mode,
         "q_window": args.q_window,

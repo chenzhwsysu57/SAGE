@@ -67,6 +67,35 @@ python main.py leduc \
 
 Use `--verbose` if you want to inspect the trajectory after the game.
 
+### Additional research methods
+
+Six research-method implementations are available under `methods/`. They are
+independent adaptations for Leduc Hold'em, Liar's Dice, and Goofspiel; consult
+each method's documentation for its dedicated runner and configuration.
+
+| Method | Description |
+| --- | --- |
+| [Agent-Pro](https://aclanthology.org/2024.acl-long.292/) | Updates dynamic self/world beliefs, reflects on failed trajectories, then searches policy improvements using same-scenario verification and bounded DFS. |
+| [EMO](https://aclanthology.org/2025.naacl-long.41/) | Maintains explicit natural-language models of opponents through atomic and central feedback/refinement, then uses a separate decision module. |
+| [Hypothetical Minds](https://arxiv.org/abs/2407.07086) | Learns and validates natural-language hypotheses about an opponent’s policy across games, using them to produce a game-level strategy. |
+| [ReTA](https://aclanthology.org/2024.naacl-long.123/) | Performs recursive look-ahead with main, anticipation, and reward actors, and selects actions using minimax backup. |
+| [Strategist](https://arxiv.org/abs/2408.10635) | Evolves executable value heuristics with an idea library and population self-play, then applies observation-keyed MCTS. |
+| Cross-Game Suspicion | Local SAGE method that builds opponent pattern, belief, and planning context from player-visible information and carries summaries across completed games. |
+
+### Running SAGE
+
+For Leduc Hold'em, use `--method sage` with the ToM ablation runner. It selects
+the full SAGE configuration: ToM-CFR with statistical opponent modeling
+(`--condition tom_cfr --method statistical`).
+
+```bash
+python runs/leduc/leduc_tom_ablation.py \
+  --method sage \
+  --archetype CallingStation \
+  --games 10 \
+  --start-seed 42
+```
+
 **Option 2**: Agents battlefield
 To run the full benchmark, you can refer to the scripts below:
 
