@@ -46,6 +46,13 @@ results/
 !Figures/
 !Figures/ban.png
 
+# Public README paper figures
+!Figures/sage.png
+!Figures/framework.png
+!Figures/leduc_token_consumption.png
+!Figures/liarsdice_token_consumption.png
+!Figures/goofspiel_token_consumption.png
+
 # Public project website figures
 !website/
 !website/assets/
