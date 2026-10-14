@@ -1,12 +1,6 @@
 <div align="center">
 
-<h3><img src="Figures/sage.png" alt="SAGE logo" height="48"> SAGE: Structured Strategic Reasoning<br>for Efficient LLM Game Playing</h3>
-
-<p><a href="https://chenzhwsysu57.github.io/">Zhiwei Chen</a><sup>1</sup> &nbsp; Tianchun Wang<sup>2</sup> &nbsp; <a href="https://raozhongtao.github.io/">Zhongtao Rao</a><sup>1,3</sup><br>Haiming Zhu<sup>4</sup> &nbsp; Ding Cao<sup>5</sup> &nbsp; <a href="https://tianxiangzhao.github.io/">Tianxiang Zhao</a><sup>1,*</sup></p>
-
-<p><sup>1</sup>The Hong Kong University of Science and Technology (Guangzhou)<br><sup>2</sup>Johns Hopkins University &nbsp; <sup>3</sup>Microsoft<br><sup>4</sup>Fudan University &nbsp; <sup>5</sup>University of Science and Technology of China<br><sup>*</sup>Corresponding author</p>
-
-<p><a href="https://arxiv.org/abs/2609.34342"><img src="Figures/icons/arxiv.svg" alt="arXiv" width="20" height="20"> 2609.34342</a> &nbsp; · &nbsp; <a href="https://github.com/chenzhwsysu57/SAGE"><img src="Figures/icons/github.svg" alt="GitHub" width="20" height="20"> SAGE</a></p>
+<h3><img src="Figures/sage.png" alt="SAGE logo" height="48"> SAGE: Structured Strategic Reasoning for Efficient LLM Game Playing</h3>
 
 </div>
 
@@ -55,7 +49,7 @@ For example:
 ### 1. Install dependencies
 
 ```bash
-git clone https://github.com/chenzhwsysu57/SAGE.git
+git clone <anonymous-repository-url> SAGE
 cd SAGE
 conda create -n SAGE python=3.11 -y
 conda activate SAGE
@@ -148,13 +142,10 @@ python main.py leduc \
 ## Citation
 
 ```bibtex
-@misc{chen2026sage,
+@misc{anonymous2026sage,
   title={SAGE: Structured Strategic Reasoning for Efficient LLM Game Playing},
-  author={Zhiwei Chen and Tianchun Wang and Zhongtao Rao and Haiming Zhu and Ding Cao and Tianxiang Zhao},
-  year={2026},
-  eprint={2609.34342},
-  archivePrefix={arXiv},
-  url={https://arxiv.org/abs/2609.34342}
+  author={Anonymous Authors},
+  year={2026}
 }
 ```
 
