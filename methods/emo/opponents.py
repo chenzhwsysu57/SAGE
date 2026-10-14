@@ -68,7 +68,7 @@ class EMOLocalOpponent:
         self.method_type = config["execution"]
         self.seed = seed
         if game == "leduc":
-            from methods.cfr import CFRMethod
+            from methods.sage.cfr import CFRMethod
             self.actor = CFRMethod(name=self.name, seed=seed, strategy_path=config["model_path"])
             if emo_opponent_config(game, config["name"], config["model_path"]) != config:
                 raise ValueError("Leduc CFR file changed during loading")
@@ -92,7 +92,7 @@ class EMOLocalOpponent:
         if not legal_actions or any(a.player_id != observation.player_id for a in legal_actions):
             raise ValueError("Opponent needs its own observation and legal actions")
         if self.config["execution"] == "local_mccfr_plus":
-            from methods.goofspiel_cfr import hand_to_mask
+            from methods.sage.goofspiel_cfr import hand_to_mask
             player = observation.player_id
             key = (player, hand_to_mask(set(observation.private_info["hand"])),
                    tuple(observation.public_info["outcome_history"]),
@@ -121,7 +121,7 @@ class EMOLocalOpponent:
                                       "model_sha256": self.config["model_sha256"], "rng_seed": self.seed}
         if self.config["execution"] != "local_cfr_plus":
             return self.actor.act(observation, legal_actions, None)
-        from methods.cfr import ACTION_TO_CODE, encode_history_for_cfr
+        from methods.sage.cfr import ACTION_TO_CODE, encode_history_for_cfr
         street_name = observation.public_info.get("street")
         if street_name not in ("preflop", "flop"):
             raise ValueError("Invalid Leduc street")

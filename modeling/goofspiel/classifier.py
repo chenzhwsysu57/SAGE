@@ -571,7 +571,7 @@ def main():
     """Run a simulation showing classifier convergence for each persona."""
     from games.goofspiel import Goofspiel
     from rollout import RolloutRunner
-    from methods.goofspiel_cfr_method import GoofspielCFRMethod
+    from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
     from modeling.goofspiel import GoofspielArchetypeAgent
 
     print("=" * 80)

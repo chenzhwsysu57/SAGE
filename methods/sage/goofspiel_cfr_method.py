@@ -13,7 +13,7 @@ from typing import Any
 
 from base.interfaces import BaseMethod, BaseModel
 from base.types import Action, Observation
-from methods.goofspiel_cfr import (
+from methods.sage.goofspiel_cfr import (
     hand_to_mask,
     regret_matching_strategy,
 )
@@ -56,7 +56,7 @@ class GoofspielCFRMethod(BaseMethod):
 
         # Resolve model path relative to project root
         if model_path is None:
-            base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            base = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
             for candidate in _DEFAULT_MODEL_CANDIDATES:
                 candidate_path = os.path.join(base, candidate)
                 if os.path.exists(candidate_path):

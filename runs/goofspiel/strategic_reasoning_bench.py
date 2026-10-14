@@ -25,8 +25,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from apis.openai_wrapper import OpenAIModel
 from base.interfaces import BaseModel
 from games.goofspiel import Goofspiel
-from methods.goofspiel_cfr_method import GoofspielCFRMethod
-from methods.strategic_reasoning_goofspiel import SearchConfig, StrategicGoofspielMethod
+from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
+from methods.baseline.strategic_reasoning_goofspiel import SearchConfig, StrategicGoofspielMethod
 from modeling.goofspiel import GoofspielArchetypeAgent, PERSONA_NAMES
 from rollout import RolloutRunner, save_trajectory
 from runs.artifacts import git_commit, make_run_dir, serializable_args, write_json

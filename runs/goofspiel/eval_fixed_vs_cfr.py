@@ -14,7 +14,7 @@ import sys
 import time
 
 
-# ── helpers (copied from methods/goofspiel_cfr.py, no numpy dependency) ──
+# ── helpers (copied from methods/sage/goofspiel_cfr.py, no numpy dependency) ──
 
 def hand_to_mask(hand: set[int]) -> int:
     m = 0

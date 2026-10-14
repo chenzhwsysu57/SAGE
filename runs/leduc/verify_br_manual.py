@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 sys.path.insert(0, ".")
 
-from methods.cfr import (
+from methods.sage.cfr import (
     DECK, ANTE, PREFLOP_BET, FLOP_BET, compare, all_community_cards,
     is_terminal, next_round, get_legals, pot_from_history, card_str,
 )
@@ -113,7 +113,7 @@ for c1, c2 in itertools.permutations(DECK, 2):
         v0 = best_response_value(check_call_strat, 0) if False else None  # skip, compute per-deal
         # compute per-deal
         # Actually compute single values
-        from methods.cfr import is_terminal, next_round, get_legals, pot_from_history, PREFLOP_BET, FLOP_BET, compare, card_str
+        from methods.sage.cfr import is_terminal, next_round, get_legals, pot_from_history, PREFLOP_BET, FLOP_BET, compare, card_str
         from runs.leduc.compute_exploitability import _infoset_key, _after_round_transition, _who_folded
 
         def _br_value_single(c1, c2, comm, history, street, cur_player, br_player, br_bets, strategy, depth=0):

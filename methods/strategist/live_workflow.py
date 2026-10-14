@@ -131,10 +131,10 @@ def source_hashes():
     paths = set()
     for folder in ("base", "games", "methods/strategist", "tools/leduc"):
         paths.update((ROOT / folder).rglob("*.py"))
-    for name in ("runs/strategist_live_bench.py", "apis/hkustgz_wrapper.py", "methods/cfr.py",
-                 "methods/baseline_opponents.py", "methods/liars_dice_cfr.py",
+    for name in ("runs/strategist_live_bench.py", "apis/hkustgz_wrapper.py", "methods/sage/cfr.py",
+                 "methods/baseline_opponents.py", "methods/sage/liars_dice_cfr.py",
                  "methods/agent_pro/opponents.py", "methods/agent_pro/policy.py",
-                 "modeling/goofspiel/archetypes.py", "methods/simple_prompt.py",
+                 "modeling/goofspiel/archetypes.py", "methods/baseline/simple_prompt.py",
                  "games/prize_pool_n5.txt"):
         paths.add(ROOT / name)
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}

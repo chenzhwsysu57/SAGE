@@ -9,7 +9,7 @@ import json, os, sys, time
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, PROJECT_ROOT)
 
-from methods.liars_dice_cfr import LiarsDiceCFRTrainer, converged_strategy
+from methods.sage.liars_dice_cfr import LiarsDiceCFRTrainer, converged_strategy
 
 OUTPUT_DIR = os.path.join(PROJECT_ROOT, "results/liars_dice/cfr/cfr_2x3_evalevery")
 MODEL_PATH = os.path.join(OUTPUT_DIR, "model")

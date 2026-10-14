@@ -31,11 +31,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from games.liars_dice import LiarsDice
 from apis.openai_wrapper import OpenAIModel
-from methods.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
-from methods.tom import ToMMethod
-from methods.liars_dice_cfr import LiarsDiceCFRMethod
-from methods.liars_dice_deep_cfr import LiarsDiceDeepCFRMethod
-from methods.liars_dice_tom import LiarsDiceToMMethod
+from methods.baseline.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
+from methods.sage.tom import ToMMethod
+from methods.sage.liars_dice_cfr import LiarsDiceCFRMethod
+from methods.sage.liars_dice_deep_cfr import LiarsDiceDeepCFRMethod
+from methods.sage.liars_dice_tom import LiarsDiceToMMethod
 from base.case_memory_runtime import (
     append_trajectory_cases_to_archive,
     append_step_case_to_archive,

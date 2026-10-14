@@ -2,7 +2,7 @@
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer
 
 print("=" * 60)
 print("MCCFR (standard) N=5, 50K iterations")

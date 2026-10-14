@@ -2,7 +2,7 @@
 import json, os, sys, time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from methods.cfr import CFRPlusTrainer
+from methods.sage.cfr import CFRPlusTrainer
 
 os.makedirs("results/leduc/cfr_model", exist_ok=True)
 save_path = "results/leduc/cfr_model/cfr_plus_100k.json"

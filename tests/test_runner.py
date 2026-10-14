@@ -7,7 +7,7 @@ from pathlib import Path
 from base.types import Action, Observation, Trajectory, TrajectoryStep
 from games.leduc import LeducHoldem
 from rollout import RolloutRunner, save_trajectory, load_trajectory
-from methods.simple_prompt import SimplePromptMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
 
 
 class DummyModel:

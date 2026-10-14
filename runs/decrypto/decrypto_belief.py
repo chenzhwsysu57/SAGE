@@ -24,7 +24,7 @@ _PROJECT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_PROJECT))
 
 from games.decrypto import Decrypto
-from methods.decrypto import DecryptoMethod
+from methods.baseline.decrypto import DecryptoMethod
 from methods.helpers import build_example
 from modeling.decrypto.semantic_belief import DecryptoBeliefState, make_embed_fn
 from rollout import RolloutRunner, save_trajectory

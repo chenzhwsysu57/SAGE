@@ -2,8 +2,8 @@ import json
 import random
 
 from base.types import Action, Observation
-import methods.cfr as cfr_mod
-from methods.cfr import (
+import methods.sage.cfr as cfr_mod
+from methods.sage.cfr import (
     CFRMethod,
     encode_history_for_cfr,
     strategy_probs_for_legal_actions,

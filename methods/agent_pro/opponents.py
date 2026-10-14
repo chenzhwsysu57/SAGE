@@ -14,7 +14,7 @@ import math
 from pathlib import Path
 import random
 
-from methods import cfr
+from methods.sage import cfr
 from methods.baseline_opponents import (
     LocalSpecifiedOpponent as SharedOpponent,
     opponent_config as shared_opponent_config,

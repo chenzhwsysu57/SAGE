@@ -9,7 +9,7 @@ import pickle
 import random
 
 from methods.baseline_opponents import LocalSpecifiedOpponent, opponent_config
-from methods.goofspiel_cfr import hand_to_mask
+from methods.sage.goofspiel_cfr import hand_to_mask
 from methods.reta.leduc_opponent import LeducGTOOpponent
 
 ROOT = Path(__file__).resolve().parents[2]

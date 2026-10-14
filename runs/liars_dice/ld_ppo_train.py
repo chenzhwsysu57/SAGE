@@ -9,7 +9,7 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.liars_dice_ppo import LiarsDicePPOTrainer
+from methods.sage.liars_dice_ppo import LiarsDicePPOTrainer
 from runs.artifacts import git_commit, make_run_dir, serializable_args, write_json
 
 

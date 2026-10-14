@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer, DECK, ANTE
+from methods.sage.cfr import CFRPlusTrainer, DECK, ANTE
 
 # Train small model
 trainer = CFRPlusTrainer(iterations=5000)
@@ -24,7 +24,7 @@ from runs.leduc.compute_exploitability import (
     _br_value, _terminal_value, _after_round_transition,
     _infoset_key, _who_folded,
 )
-from methods.cfr import (
+from methods.sage.cfr import (
     is_terminal, next_round, get_legals, pot_from_history,
     PREFLOP_BET, FLOP_BET, compare, card_str, all_community_cards,
 )

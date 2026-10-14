@@ -18,11 +18,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from games.leduc import LeducHoldem
 from apis.openai_wrapper import OpenAIModel
-from methods.simple_prompt import SimplePromptMethod
-from methods.cot import CoTMethod
-from methods.react import ReActMethod
-from methods.reflexion import ReflexionMethod
-from methods.tom import ToMMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
+from methods.baseline.cot import CoTMethod
+from methods.baseline.react import ReActMethod
+from methods.baseline.reflexion import ReflexionMethod
+from methods.sage.tom import ToMMethod
 from rollout import RolloutRunner
 from runs.artifacts import git_commit, make_run_dir, serializable_args, write_json
 

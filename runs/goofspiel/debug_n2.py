@@ -3,7 +3,7 @@
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer
 
 trainer = GoofspielCFRTrainer(n=2, iterations=5000, seed=0)
 trainer.train(eval_every=500)

@@ -69,8 +69,8 @@ def source_hashes():
              "scripts/strategist-tabular-benchmark.sh", "methods/agent_pro/opponents.py",
              "methods/agent_pro/style_opponents.py", "methods/agent_pro/policy.py",
              "methods/agent_pro/method.py", "methods/agent_pro/retry.py", "methods/agent_pro/fallback.py", "methods/helpers.py",
-             "methods/baseline_opponents.py", "methods/cfr.py", "methods/liars_dice_cfr.py",
-             "methods/goofspiel_cfr.py", "modeling/leduc/archetypes.py",
+             "methods/baseline_opponents.py", "methods/sage/cfr.py", "methods/sage/liars_dice_cfr.py",
+             "methods/sage/goofspiel_cfr.py", "modeling/leduc/archetypes.py",
              "modeling/liars_dice/archetypes.py", "modeling/goofspiel/archetypes.py",
              "apis/deepseek_journal_wrapper.py", "apis/hkustgz_wrapper.py",
              "base/baseline_calls.py", "base/model_output.py"]

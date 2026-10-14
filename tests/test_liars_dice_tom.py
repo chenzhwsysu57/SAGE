@@ -5,7 +5,7 @@ import pytest
 from base.case_memory import CASE_MEMORY_ACTIVE_IDS_KEY, CASE_MEMORY_BANK_KEY
 from base.memory import BaseMemory
 from base.types import Action, Observation, Trajectory, TrajectoryStep
-from methods.liars_dice_tom import LiarsDiceToMMethod
+from methods.sage.liars_dice_tom import LiarsDiceToMMethod
 
 
 class MockModel:

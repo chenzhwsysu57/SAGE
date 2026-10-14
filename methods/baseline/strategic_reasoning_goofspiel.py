@@ -7,7 +7,7 @@ from typing import Any
 from base.interfaces import BaseMethod, BaseModel
 from base.types import Action, Observation
 from games.goofspiel import Goofspiel, GoofspielState
-from methods.goofspiel_cfr_method import GoofspielCFRMethod
+from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
 from methods.helpers import build_example, history_to_text, parse_action_response, render_action_descs
 
 

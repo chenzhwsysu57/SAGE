@@ -6,7 +6,7 @@ import tempfile
 
 from games.liars_dice import LiarsDice
 from base.types import Action
-from methods.liars_dice_ppo import LiarsDicePPOTrainer, LiarsDicePPOMethod
+from methods.sage.liars_dice_ppo import LiarsDicePPOTrainer, LiarsDicePPOMethod
 
 
 def test_ppo_trainer_smoke():

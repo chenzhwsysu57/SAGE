@@ -14,7 +14,7 @@ from tqdm import tqdm
 import pickle
 
 from games.goofspiel import Goofspiel
-from methods.goofspiel_cfr_method import GoofspielCFRMethod
+from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
 from modeling.goofspiel.archetypes import GoofspielArchetypeAgent
 
 # Load strategy once, share read-only across CFR instances

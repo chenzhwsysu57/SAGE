@@ -19,7 +19,7 @@ from typing import Any
 
 from base.interfaces import BaseModel
 from base.types import Action, Observation, Trajectory
-from methods.suspicion_prompt import SuspicionPromptMethod
+from .suspicion_prompt import SuspicionPromptMethod
 
 
 def _json(value: Any) -> str:

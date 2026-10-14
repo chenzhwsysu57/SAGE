@@ -35,9 +35,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from games.goofspiel import Goofspiel
 from apis.openai_wrapper import OpenAIModel
-from methods.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
-from methods.tom import ToMMethod
-from methods.goofspiel_cfr_method import GoofspielCFRMethod
+from methods.baseline.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
+from methods.sage.tom import ToMMethod
+from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
 from base.case_memory_runtime import (
     append_trajectory_cases_to_archive,
     append_step_case_to_archive,
@@ -52,7 +52,7 @@ from modeling.goofspiel import (
     GoofspielArchetypeAgent,
 )
 from modeling.goofspiel.classifier import PersonaModelingMethod
-from methods.goofspiel_tom import GoofspielToMMethod
+from methods.sage.goofspiel_tom import GoofspielToMMethod
 
 # Lazy-loaded Goofspiel CFR renderer for ToM prompt
 _goofspiel_cfr_renderer_instance = None

@@ -144,11 +144,11 @@ def _implementation_id():
     paths = ["methods/agent_pro/" + f + ".py" for f in ("scenarios", "method", "policy", "calls", "retry", "scripted", "opponents", "fallback", "fallback_calls")]
     paths += ["games/leduc.py", "games/liars_dice.py", "games/goofspiel.py", "games/prize_pool_n5.txt",
               "base/interfaces.py", "base/types.py", "base/liars_dice_core.py", "base/model_output.py",
-              "base/baseline_calls.py", "methods/baseline_opponents.py", "methods/liars_dice_cfr.py",
-              "modeling/goofspiel/archetypes.py", "methods/simple_prompt.py",
-              "methods/cfr.py", "tools/leduc/cfr_tools.py"]
+              "base/baseline_calls.py", "methods/baseline_opponents.py", "methods/sage/liars_dice_cfr.py",
+              "modeling/goofspiel/archetypes.py", "methods/baseline/simple_prompt.py",
+              "methods/sage/cfr.py", "tools/leduc/cfr_tools.py"]
     paths += ["methods/agent_pro/style_opponents.py", "modeling/leduc/archetypes.py",
-              "modeling/liars_dice/archetypes.py", "methods/helpers.py", "methods/goofspiel_cfr.py"]
+              "modeling/liars_dice/archetypes.py", "methods/helpers.py", "methods/sage/goofspiel_cfr.py"]
     return digest({"python": sys.version, "sources": {
         p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in paths}})
 

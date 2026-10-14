@@ -48,7 +48,7 @@ except Exception:  # pragma: no cover - tqdm is optional in dev envs
     tqdm = None
 
 from games.liars_dice import LiarsDice
-from methods.liars_dice_cfr import (
+from methods.sage.liars_dice_cfr import (
     encode_infoset,
     encode_action,
     regret_matching_strategy,

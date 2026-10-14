@@ -153,7 +153,7 @@ class StyleOpponent:
             return action,prompt,raw,{"execution":"llm_style","fallback_used":False}
         if self.strategy is None:
             return self.rng.choice(legal_actions),"","",{"execution":"local_random","fallback_used":False}
-        from methods.goofspiel_cfr import hand_to_mask
+        from methods.sage.goofspiel_cfr import hand_to_mask
         p=observation.player_id
         key=(p,hand_to_mask(set(observation.private_info["hand"])),
              tuple(observation.public_info["outcome_history"]),tuple(observation.private_info["my_bids"]),

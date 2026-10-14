@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys, time
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer, ANTE
+from methods.sage.cfr import CFRPlusTrainer, ANTE
 from runs.leduc.compute_exploitability import best_response_value
 
 t0 = time.perf_counter()

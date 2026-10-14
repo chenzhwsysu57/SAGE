@@ -22,7 +22,7 @@ from methods.helpers import (
     build_example, build_rule_section, history_to_text, parse_action_response,
     render_action_descs,
 )
-from methods.belief import OpponentProfile, DirichletBelief
+from methods.sage.belief import OpponentProfile, DirichletBelief
 from modeling.base import BaseModelingMethod
 
 

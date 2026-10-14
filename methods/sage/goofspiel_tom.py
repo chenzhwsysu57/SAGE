@@ -24,7 +24,7 @@ from methods.helpers import (
     build_example, history_to_text, parse_action_response,
     render_action_descs,
 )
-from methods.goofspiel_cfr_method import GoofspielCFRMethod
+from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
 from modeling.goofspiel.bayes_persona import BayesPersonaModel
 from base.ablation import AblationConfig
 

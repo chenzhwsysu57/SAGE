@@ -2,7 +2,7 @@
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer, mask_to_list, infoset_key_from_hand
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer, mask_to_list, infoset_key_from_hand
 
 # Train MCCFR (standard)
 print("=== MCCFR (standard) ===")

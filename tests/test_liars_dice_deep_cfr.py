@@ -6,7 +6,7 @@ import os
 import tempfile
 import torch
 
-from methods.liars_dice_deep_cfr import (
+from methods.sage.liars_dice_deep_cfr import (
     LiarsDiceDeepCFRTrainer,
     LiarsDiceDeepCFRMethod,
     DeepCFRNetwork,

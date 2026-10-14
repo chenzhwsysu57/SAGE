@@ -11,7 +11,7 @@ os.environ["PYTHONUNBUFFERED"] = "1"
 
 from apis.openai_wrapper import OpenAIModel
 from games.liars_dice import LiarsDice
-from methods.simple_prompt import SimplePromptMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
 from modeling.liars_dice.archetypes import ArchetypeAgent
 from rollout import RolloutRunner
 

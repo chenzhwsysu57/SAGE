@@ -3,7 +3,7 @@
 import pytest
 from base.types import Action, Observation
 from games.decrypto import Decrypto, DecryptoState, _parse_guess_code
-from methods.decrypto import DecryptoMethod
+from methods.baseline.decrypto import DecryptoMethod
 from modeling.decrypto import LockedThemeState
 from runs.decrypto.metrics import aggregate_metrics, summarize_trajectory
 from tools.decrypto.interceptor_style import (

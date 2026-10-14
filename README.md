@@ -1,6 +1,6 @@
 <div align="center">
 
-<h3><img src="Figures/sage.png" alt="SAGE logo" height="48"> SAGE: Structured Strategic Reasoning<br>for Efficient LLM Game Playing</h3>
+<h3><img src="Figures/sage.png" alt="SAGE logo" height="48"> SAGE: Structured Strategic Reasoning for Efficient LLM Game Playing</h3>
 
 <p><a href="https://chenzhwsysu57.github.io/">Zhiwei Chen</a><sup>1</sup> &nbsp; Tianchun Wang<sup>2</sup> &nbsp; <a href="https://raozhongtao.github.io/">Zhongtao Rao</a><sup>1,3</sup><br>Haiming Zhu<sup>4</sup> &nbsp; Ding Cao<sup>5</sup> &nbsp; <a href="https://tianxiangzhao.github.io/">Tianxiang Zhao</a><sup>1,*</sup></p>
 
@@ -160,4 +160,4 @@ python main.py leduc \
 
 ## License
 
-The project code is released under the [MIT License](LICENSE). Third-party code, datasets, and model weights remain subject to their original terms.
+The project code is released under the [MIT License](LICENSE).

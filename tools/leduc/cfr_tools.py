@@ -8,7 +8,7 @@ from __future__ import annotations
 import json
 import os
 
-# ── Constants (mirror methods/cfr.py) ──────────────────────────────────────
+# ── Constants (mirror methods/sage/cfr.py) ──────────────────────────────────────
 
 RANKS = ["J", "Q", "K"]
 SUITS = ["H", "S"]

@@ -11,7 +11,7 @@ from methods.helpers import (
     build_example, build_rule_section, extract_json, history_to_text,
     parse_action_response, render_action_descs,
 )
-from methods.tom import ToMMethod
+from methods.sage.tom import ToMMethod
 from tools.leduc.cfr_tools import CFRTools
 from base.ablation import AblationConfig
 

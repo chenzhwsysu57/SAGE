@@ -26,12 +26,12 @@ from base.types import Trajectory
 from games.goofspiel import Goofspiel
 from games.leduc import LeducHoldem
 from games.liars_dice import LiarsDice
-from methods.goofspiel_cfr_method import GoofspielCFRMethod
-from methods.goofspiel_tom import GoofspielToMMethod
-from methods.liars_dice_cfr import LiarsDiceCFRMethod
-from methods.liars_dice_tom import LiarsDiceToMMethod
-from methods.simple_prompt import SimplePromptMethod
-from methods.suspicion_prompt import SuspicionPromptMethod
+from methods.sage.goofspiel_cfr_method import GoofspielCFRMethod
+from methods.sage.goofspiel_tom import GoofspielToMMethod
+from methods.sage.liars_dice_cfr import LiarsDiceCFRMethod
+from methods.sage.liars_dice_tom import LiarsDiceToMMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
+from methods.suspicion import SuspicionPromptMethod
 from modeling.base import BaseModelingMethod
 from modeling.goofspiel.archetypes import GoofspielArchetypeAgent
 from modeling.leduc import (
@@ -143,7 +143,7 @@ def _make_method(
             q_alpha=args.q_alpha,
             q_tau=args.q_tau,
         )
-        from methods.leduc_tom import LeducToMMethod
+        from methods.sage.leduc_tom import LeducToMMethod
 
         return LeducToMMethod(
             name=name,

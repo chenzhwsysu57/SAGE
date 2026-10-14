@@ -6,7 +6,7 @@ Central location for:
 - ArchetypeAgent class (for experiments)
 """
 
-from methods.simple_prompt import SimplePromptMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
 
 # ── Archetype definitions ──────────────────────────────────────────────
 # Each entry: (display_name, behavior_prompt_prefix)

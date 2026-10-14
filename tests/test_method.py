@@ -3,11 +3,11 @@
 from base.types import Action, Observation, Trajectory, TrajectoryStep
 from base.case_memory import CASE_MEMORY_ACTIVE_IDS_KEY, CASE_MEMORY_BANK_KEY
 from methods.helpers import build_example, parse_action_response
-from methods.leduc_tom import LeducToMMethod
-from methods.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
-from methods.suspicion_prompt import SuspicionPromptMethod
-from methods.belief import OpponentProfile
-from methods.tom import ToMMethod
+from methods.sage.leduc_tom import LeducToMMethod
+from methods.baseline.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
+from methods.suspicion import SuspicionPromptMethod
+from methods.sage.belief import OpponentProfile
+from methods.sage.tom import ToMMethod
 from modeling.base import BaseModelingMethod
 from modeling.liars_dice.archetypes import ArchetypeAgent
 

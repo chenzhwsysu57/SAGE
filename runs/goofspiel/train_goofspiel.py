@@ -14,7 +14,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
-from methods.goofspiel_cfr import (
+from methods.sage.goofspiel_cfr import (
     GoofspielCFRTrainer,
     mask_to_list,
     hand_to_mask,

@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer, ANTE, DECK
+from methods.sage.cfr import CFRPlusTrainer, ANTE, DECK
 from runs.leduc.compute_exploitability import best_response_value
 import itertools
 

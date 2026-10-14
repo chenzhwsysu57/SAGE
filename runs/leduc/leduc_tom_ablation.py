@@ -33,9 +33,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from games.leduc import LeducHoldem
 from apis.openai_wrapper import OpenAIModel
-from methods.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
-from methods.suspicion_prompt import SuspicionPromptMethod
-from methods.leduc_tom import LeducToMMethod
+from methods.baseline.simple_prompt import SimplePlaceboPromptMethod, SimplePromptMethod
+from methods.suspicion import SuspicionPromptMethod
+from methods.sage.leduc_tom import LeducToMMethod
 from base.case_memory_runtime import (
     append_trajectory_cases_to_archive,
     append_step_case_to_archive,

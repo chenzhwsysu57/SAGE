@@ -14,7 +14,7 @@ from tqdm import tqdm
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from games.liars_dice import LiarsDice
-from methods.liars_dice_ppo import LiarsDicePPOMethod
+from methods.sage.liars_dice_ppo import LiarsDicePPOMethod
 from modeling.liars_dice.archetypes import ArchetypeAgent
 from rollout import RolloutRunner
 from runs.artifacts import git_commit, make_run_dir, serializable_args, write_json

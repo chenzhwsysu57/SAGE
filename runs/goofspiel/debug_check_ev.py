@@ -4,7 +4,7 @@ and the BR should not find large deviations."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer, mask_to_list, infoset_key_from_hand
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer, mask_to_list, infoset_key_from_hand
 
 # N=5 with few iterations - quick check
 t = GoofspielCFRTrainer(n=5, iterations=10_000, seed=42, cfr_plus=False)
@@ -38,7 +38,7 @@ def expected_value(t):
     return traverse(t._initial_state())
 
 # Also compute BR for both players
-from methods.goofspiel_cfr import regret_matching_strategy, hand_to_mask
+from methods.sage.goofspiel_cfr import regret_matching_strategy, hand_to_mask
 
 # Build snapshot from strategy_sum
 snapshot = {}

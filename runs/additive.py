@@ -28,9 +28,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from apis.openai_wrapper import OpenAIModel
 from base.ablation import AblationConfig
-from methods.liars_dice_cfr import LiarsDiceCFRMethod
-from methods.liars_dice_deep_cfr import LiarsDiceDeepCFRMethod
-from methods.liars_dice_tom import LiarsDiceToMMethod
+from methods.sage.liars_dice_cfr import LiarsDiceCFRMethod
+from methods.sage.liars_dice_deep_cfr import LiarsDiceDeepCFRMethod
+from methods.sage.liars_dice_tom import LiarsDiceToMMethod
 from runs.artifacts import git_commit, make_run_dir, serializable_args, write_json
 import runs.goofspiel.goofspiel_bench as goofspiel_bench
 import runs.leduc.leduc_tom_ablation as leduc_ablation

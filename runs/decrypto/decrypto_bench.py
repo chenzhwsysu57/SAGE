@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from games.decrypto import Decrypto
 from apis.openai_wrapper import OpenAIModel
-from methods.decrypto import DecryptoMethod
+from methods.baseline.decrypto import DecryptoMethod
 from modeling.decrypto import LockedThemeState
 from rollout import RolloutRunner
 from runs.artifacts import git_commit, make_run_dir, serializable_args, write_json

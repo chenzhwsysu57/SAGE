@@ -24,7 +24,7 @@ sys.path.insert(0, _PROJECT_ROOT)
 from tqdm import tqdm
 
 from games.werewolf import Werewolf, ROLE_SPECS
-from methods.simple_prompt import SimplePromptMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
 from apis.openai_wrapper import OpenAIModel
 from rollout import RolloutRunner, save_trajectory
 from modeling.werewolf.features import (

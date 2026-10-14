@@ -2,7 +2,7 @@
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer, hand_to_mask, mask_to_list
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer, hand_to_mask, mask_to_list
 from itertools import combinations
 
 t = GoofspielCFRTrainer(n=5, iterations=1, seed=0)

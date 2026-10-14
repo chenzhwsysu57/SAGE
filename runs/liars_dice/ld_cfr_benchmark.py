@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from apis.openai_wrapper import OpenAIModel
 from base.memory import BaseMemory
 from games.liars_dice import LiarsDice
-from methods.liars_dice_cfr import LiarsDiceCFRMethod
+from methods.sage.liars_dice_cfr import LiarsDiceCFRMethod
 from modeling.base import BaseModelingMethod
 from modeling.liars_dice.archetypes import ARCHETYPE_NAMES, ArchetypeAgent
 from rollout import RolloutRunner

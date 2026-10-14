@@ -5,7 +5,7 @@ from types import SimpleNamespace
 
 from base.interfaces import BaseModel
 from base.types import Action, Observation
-from methods.strategic_reasoning_goofspiel import SearchConfig, StrategicGoofspielMethod
+from methods.baseline.strategic_reasoning_goofspiel import SearchConfig, StrategicGoofspielMethod
 from runs.goofspiel.strategic_reasoning_bench import (
     build_metrics,
     save_planning_texts,

@@ -3,7 +3,7 @@
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer, mask_to_list, infoset_key_from_hand
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer, mask_to_list, infoset_key_from_hand
 
 trainer = GoofspielCFRTrainer(n=6, iterations=20_000, seed=42)
 trainer.train(eval_every=0)  # no exploitability eval during training (slow)

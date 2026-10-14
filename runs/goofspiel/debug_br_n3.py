@@ -4,7 +4,7 @@ Prizes: 3, 2, 1. Total pool = 6."""
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer, hand_to_mask, mask_to_list
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer, hand_to_mask, mask_to_list
 
 t = GoofspielCFRTrainer(n=3, iterations=1, seed=0)
 

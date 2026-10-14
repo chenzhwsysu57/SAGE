@@ -35,8 +35,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from apis.openai_wrapper import OpenAIModel
 from base.ablation import AblationConfig
 from base.memory import BaseMemory
-from methods.simple_prompt import SimplePromptMethod
-from methods.leduc_tom import LeducToMMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
+from methods.sage.leduc_tom import LeducToMMethod
 from modeling.leduc import StatisticalProfileMethod
 from modeling.leduc.archetypes import ARCHETYPE_NAMES
 from modeling.leduc.parametric_style import (

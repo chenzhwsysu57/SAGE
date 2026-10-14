@@ -6,7 +6,7 @@ from base.memory import BaseMemory
 from modeling.leduc.archetypes import ARCHETYPE_NAMES
 from modeling.leduc.llm_belief import OpponentBelief
 from modeling.leduc.statistical_profile import StatisticalProfileMethod
-from methods.cfr import CFRPlusTrainer
+from methods.sage.cfr import CFRPlusTrainer
 import runs.leduc.leduc_tom_ablation as tom_ablation
 from runs.leduc.leduc_tom_ablation import run_condition
 

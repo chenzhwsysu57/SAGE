@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys, time
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer, ANTE, DECK
+from methods.sage.cfr import CFRPlusTrainer, ANTE, DECK
 from runs.leduc.compute_exploitability import best_response_value
 import itertools
 
@@ -49,7 +49,7 @@ for i in range(TOTAL_ITERS):
         # Actually just use the average deal value from _walk with uniform reach
         # Re-use the strategy for self-play
         import math
-        from methods.cfr import (
+        from methods.sage.cfr import (
             is_terminal, next_round, get_legals, pot_from_history,
             PREFLOP_BET, FLOP_BET, compare, card_str, all_community_cards
         )

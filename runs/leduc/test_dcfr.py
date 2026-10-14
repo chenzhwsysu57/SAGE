@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys, time
 sys.path.insert(0, ".")
 from tqdm import tqdm
-from methods.cfr import CFRPlusTrainer, ANTE
+from methods.sage.cfr import CFRPlusTrainer, ANTE
 
 trainer = CFRPlusTrainer(iterations=50_000)
 t0 = time.perf_counter()

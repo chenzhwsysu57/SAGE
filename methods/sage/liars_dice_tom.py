@@ -24,7 +24,7 @@ from base.case_memory import render_case_memory_block, select_case_memories
 from base.interfaces import BaseMethod, BaseModel
 from base.types import Action, Observation, Trajectory
 from methods.helpers import build_example, parse_action_response, render_action_descs
-from methods.liars_dice_cfr import (
+from methods.sage.liars_dice_cfr import (
     LiarsDiceCFRTrainer,
     _action_to_key,
     _infoset_key_from_observation_internal,

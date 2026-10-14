@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer
+from methods.sage.cfr import CFRPlusTrainer
 
 trainer = CFRPlusTrainer(iterations=20_000)
 

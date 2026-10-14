@@ -21,7 +21,7 @@ import torch.nn.functional as F
 from base.interfaces import BaseModel
 from base.types import Action, Observation
 from games.liars_dice import LiarsDice
-from methods.liars_dice_deep_cfr import encode_features_from_obs
+from methods.sage.liars_dice_deep_cfr import encode_features_from_obs
 from runs.artifacts import git_commit
 
 

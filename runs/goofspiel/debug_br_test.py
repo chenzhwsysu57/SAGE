@@ -6,7 +6,7 @@ N=2 uniform策略下，exploitability应为0.5。这验证BR没有系统性错�
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from methods.goofspiel_cfr import GoofspielCFRTrainer, hand_to_mask
+from methods.sage.goofspiel_cfr import GoofspielCFRTrainer, hand_to_mask
 
 def test_uniform_exploitability():
     """Verify that uniform strategy has the correct exploitability for N=2."""

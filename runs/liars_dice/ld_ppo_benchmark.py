@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
 from apis.openai_wrapper import OpenAIModel
 from games.liars_dice import LiarsDice
-from methods.liars_dice_ppo import LiarsDicePPOMethod
+from methods.sage.liars_dice_ppo import LiarsDicePPOMethod
 from modeling.liars_dice.archetypes import ARCHETYPE_NAMES, ArchetypeAgent
 from rollout import RolloutRunner
 from runs.liars_dice.prompt_utils import save_step_artifacts

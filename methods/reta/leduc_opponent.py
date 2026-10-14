@@ -10,7 +10,7 @@ import math
 from pathlib import Path
 import random
 
-from methods.cfr import ACTION_TO_CODE, encode_history_for_cfr, sample_action_from_probs, strategy_probs_for_legal_actions
+from methods.sage.cfr import ACTION_TO_CODE, encode_history_for_cfr, sample_action_from_probs, strategy_probs_for_legal_actions
 
 DEFAULT_MODEL = Path(__file__).resolve().parents[2] / "results/leduc/cfr_model/cfr_plus_21000.json"
 

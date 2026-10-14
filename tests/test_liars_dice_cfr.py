@@ -5,7 +5,7 @@ import os
 import tempfile
 from types import SimpleNamespace
 
-from methods.liars_dice_cfr import (
+from methods.sage.liars_dice_cfr import (
     LiarsDiceCFRTrainer, LiarsDiceCFRMethod, CFRState,
     encode_infoset, encode_action, decode_action,
     regret_matching_strategy, converged_strategy,

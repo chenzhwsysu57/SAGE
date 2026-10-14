@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys, itertools
 sys.path.insert(0, ".")
 
-from methods.cfr import (
+from methods.sage.cfr import (
     CFRPlusTrainer, ANTE, DECK, all_community_cards,
     is_terminal, next_round, get_legals, pot_from_history,
     PREFLOP_BET, FLOP_BET, compare, card_str,

@@ -6,7 +6,7 @@ Central location for:
 - ArchetypeAgent class (for experiments)
 """
 
-from methods.simple_prompt import SimplePromptMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
 
 # ── Archetype definitions ──
 # Each entry: (display_name, behavior_prompt_prefix)
@@ -176,7 +176,7 @@ class CFRGTOAgent:
             self._strategy = data["strategy"]
         else:
             # Train on the fly (one-time, then save to disk for future use)
-            from methods.cfr import CFRPlusTrainer
+            from methods.sage.cfr import CFRPlusTrainer
             print(f"CFR+ model not found at {path}, training from scratch...")
             trainer = CFRPlusTrainer(iterations=100000)
             trainer.train()
@@ -184,7 +184,7 @@ class CFRGTOAgent:
 
     def act(self, observation, legal_actions, model=None):
         """Look up CFR strategy for current info set, sample an action."""
-        from methods.cfr import (
+        from methods.sage.cfr import (
             encode_history_for_cfr,
             sample_action_from_probs,
             strategy_probs_for_legal_actions,

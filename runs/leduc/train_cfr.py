@@ -13,7 +13,7 @@ import time
 
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer
+from methods.sage.cfr import CFRPlusTrainer
 
 
 def parse_args() -> argparse.Namespace:

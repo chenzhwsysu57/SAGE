@@ -31,9 +31,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 from apis.openai_wrapper import OpenAIModel
 from base.ablation import AblationConfig
 from base.memory import BaseMemory
-from methods.leduc_tom import LeducToMMethod
-from methods.simple_prompt import SimplePromptMethod
-from methods.suspicion_prompt import SuspicionPromptMethod
+from methods.sage.leduc_tom import LeducToMMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
+from methods.suspicion import SuspicionPromptMethod
 from modeling.leduc import StatisticalProfileMethod
 from rollout import save_trajectory
 from runs.additive import FirstLegalMockModel, is_dirty_worktree

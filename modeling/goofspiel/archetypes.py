@@ -12,7 +12,7 @@ from typing import Any
 
 from base.interfaces import BaseMethod, BaseModel
 from base.types import Action, Observation
-from methods.simple_prompt import SimplePromptMethod
+from methods.baseline.simple_prompt import SimplePromptMethod
 
 
 # ── common helpers ──────────────────────────────────────────────────────

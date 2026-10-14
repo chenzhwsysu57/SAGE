@@ -5,7 +5,7 @@ import pytest
 from base.case_memory import CASE_MEMORY_ACTIVE_IDS_KEY, CASE_MEMORY_BANK_KEY
 from base.memory import BaseMemory
 from base.types import Action, Observation, Trajectory, TrajectoryStep
-from methods.goofspiel_tom import GoofspielToMMethod
+from methods.sage.goofspiel_tom import GoofspielToMMethod
 
 
 class DummyModel:

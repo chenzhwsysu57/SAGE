@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys, itertools
 sys.path.insert(0, ".")
 
-from methods.cfr import CFRPlusTrainer, DECK, ANTE, all_community_cards
+from methods.sage.cfr import CFRPlusTrainer, DECK, ANTE, all_community_cards
 from runs.leduc.compute_exploitability import best_response_value, _br_value
 
 trainer = CFRPlusTrainer(iterations=10_000)
@@ -50,7 +50,7 @@ def self_play_ev():
 
 def _follow_strategy(c1, c2, comm, history, street, cur_player, strategy, p0_contrib, p1_contrib):
     """Walk tree with both players following the strategy. Returns P0's net profit."""
-    from methods.cfr import is_terminal, next_round, get_legals, pot_from_history, compare, PREFLOP_BET, FLOP_BET, card_str
+    from methods.sage.cfr import is_terminal, next_round, get_legals, pot_from_history, compare, PREFLOP_BET, FLOP_BET, card_str
 
     if is_terminal(history, street):
         if history[-1] == "f":
